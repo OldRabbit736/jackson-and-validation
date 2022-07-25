@@ -22,6 +22,7 @@ public class DogController {
 
     @PutMapping("/dogs/{dogId}")
     public ResponseEntity<UpdateDogResponse> UpdateDog(@PathVariable("dogId") Long dogId, @RequestBody @Valid UpdateDogRequest updateDogRequest) {
+        System.out.println(updateDogRequest);
         UpdateDogResponse response = new UpdateDogResponse("dog updated");
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
