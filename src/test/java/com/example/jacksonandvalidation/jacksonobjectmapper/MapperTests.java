@@ -1,4 +1,4 @@
-package com.example.jacksontutorialsbaeldung.objectMapper;
+package com.example.jacksonandvalidation.jacksonobjectmapper;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
@@ -9,7 +9,6 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@TestMethodOrder(value = MethodOrderer.OrderAnnotation.class)
 public class MapperTests {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
@@ -19,14 +18,12 @@ public class MapperTests {
     }
 
     @Test
-    @Order(1)
     void objectToJson() throws IOException {
         Car car = new Car("yellow", "renault");
         objectMapper.writeValue(new File("./src/test/resources/target/car1.json"), car);
     }
 
     @Test
-    @Order(2)
     void jsonToObject() throws IOException {
         // 방법 1 : String 으로부터 값을 읽는다.
         //String json = "{ \"color\" : \"Black\", \"type\" : \"BMW\" }";
@@ -72,7 +69,7 @@ public class MapperTests {
 
     @DisplayName("만약 primitive 숫자 필드에 숫자가 아닌 글자를 넣는다면?")
     @Test
-    void personLetterIntField() throws IOException {
+    void personLetterIntField() {
         // objectMapper.readValue(new File(getFileLocation("personWithLetterIntField.json")), Person.class);
         // --> Cannot deserialize value of type `int` from String "i don't know": not a valid `int` value
 
@@ -109,7 +106,7 @@ public class MapperTests {
 
     @DisplayName("만약 reference 숫자 필드에 숫자가 아닌 글자를 넣는다면?")
     @Test
-    void dogLetterIntegerField() throws IOException {
+    void dogLetterIntegerField() {
 
         //Cannot deserialize value of type `java.lang.Integer` from String "hi!": not a valid `java.lang.Integer` value
         //Dog dog = objectMapper.readValue(new File(getFileLocation("dogWithLetterAge.json")), Dog.class);

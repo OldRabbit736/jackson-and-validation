@@ -1,4 +1,4 @@
-package com.example.jacksontutorialsbaeldung.objectMapper;
+package com.example.jacksonandvalidation.jacksonobjectmapper;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
