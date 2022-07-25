@@ -9,6 +9,14 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
+/*
+Jackson 라이브러리의 ObjectMapper 에 대한 테스트 몇 가지 진행
+- 과연 필드가 비었을 때, 빈 값("")일 때 Jackson 라이브러리는 어떻게 deserialization 을 진행하는 것인가?
+- ObjectMapper 를 이용해 테스트 진행
+  - 참조: https://www.baeldung.com/jackson-object-mapper-tutorial
+ */
+
 public class MapperTests {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
